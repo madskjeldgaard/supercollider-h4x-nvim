@@ -4,6 +4,10 @@
 --
 local M = {}
 
+-- ----------------------
+-- Lua utilities
+-- ----------------------
+
 function M.tbl_len(T)
 	local count = 0
 	for _ in pairs(T) do
@@ -29,6 +33,10 @@ function M.shell(command)
     return lines
 end
 
+-- ----------------------
+-- Paths and filesystem
+-- ----------------------
+
 --- Check if a file or directory exists in this path
 function M.exists(file)
    local ok, err, code = os.rename(file, file)
@@ -44,53 +52,7 @@ end
 --- Check if a directory exists in this path
 function M.isdir(path)
    -- "/" works on both Unix and Windows
-   return exists(path.."/")
-end
-
-function M.fzf(sources, sinkfunc, custom_options)
-	local cmd = vim.g.scnvim_fuzzy_command
-	local fzf_run = vim.fn[cmd .. "#run"]
-	local fzf_wrap = vim.fn[cmd .. "#wrap"]
-
-	local wrapped = fzf_wrap("test", {
-		source = sources,
-		options = custom_options or {},
-		-- don't set `sink` or `sink*` here
-	})
-
-	wrapped["sink*"] = nil   -- this line is required if you want to use `sink` only
-	wrapped.sink = sinkfunc
-	fzf_run(wrapped)
-end
-
--- Unpack csv file with tags into lua table
-function M.scnvim_unpack_tags_table()
-	local root = vim.g.scnvim_root_dir
-	local classes = root .. "/scnvim-data/tags"
-	local tagsfile = io.open(classes)
-	local help = {}
-
-	for line in tagsfile:lines() do
-		local tagname, tagpath, _, _= line:match("%s*(.-)\t%s*(.-)\t%s*(.-)\t%s*(.-)")
-		help[tostring(tagname)] = tagpath
-		-- print(tagname)
-	end
-
-	return help
-end
-
-
--- Cookiecutter templates
--- requires https://github.com/cookiecutter/cookiecutter
-function M.cookiecutter(url, output_dir)
-	-- local cmd = "cookiecutter " .. url .. " -o " .. output_dir
-	local cmd = string.format("cookiecutter %s -o %s", url, output_dir)
-	local executable = vim.call("executable", "cookiecutter")
-	if executable == 1 then
-		terminal(cmd)
-	else
-		vim.api.nvim_err_writeln("cookiecutter not executable!")
-	end
+   return M.exists(path.."/")
 end
 
 function M.home()
@@ -139,5 +101,58 @@ function M.get_plugin_root_dir()
 end
 
 M.supercollider_h4x_nvim_root_dir = M.get_plugin_root_dir()
+
+-- ----------------------
+-- Cookiecutter stuff
+-- ----------------------
+
+-- Cookiecutter templates
+-- requires https://github.com/cookiecutter/cookiecutter
+function M.cookiecutter(url, output_dir)
+	-- local cmd = "cookiecutter " .. url .. " -o " .. output_dir
+	local cmd = string.format("cookiecutter %s -o %s", url, output_dir)
+	local executable = vim.call("executable", "cookiecutter")
+	if executable == 1 then
+		M.terminal(cmd)
+	else
+		vim.api.nvim_err_writeln("cookiecutter not executable!")
+	end
+end
+
+-- ----------------------
+-- Fuzzy find
+-- ----------------------
+
+function M.fzf(sources, sinkfunc, custom_options)
+	local cmd = vim.g.scnvim_fuzzy_command
+	local fzf_run = vim.fn[cmd .. "#run"]
+	local fzf_wrap = vim.fn[cmd .. "#wrap"]
+
+	local wrapped = fzf_wrap("test", {
+		source = sources,
+		options = custom_options or {},
+		-- don't set `sink` or `sink*` here
+	})
+
+	wrapped["sink*"] = nil   -- this line is required if you want to use `sink` only
+	wrapped.sink = sinkfunc
+	fzf_run(wrapped)
+end
+
+-- Unpack csv file with tags into lua table
+function M.scnvim_unpack_tags_table()
+	local root = vim.g.scnvim_root_dir
+	local classes = root .. "/scnvim-data/tags"
+	local tagsfile = io.open(classes)
+	local help = {}
+
+	for line in tagsfile:lines() do
+		local tagname, tagpath, _, _= line:match("%s*(.-)\t%s*(.-)\t%s*(.-)\t%s*(.-)")
+		help[tostring(tagname)] = tagpath
+		-- print(tagname)
+	end
+
+	return help
+end
 
 return M

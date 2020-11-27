@@ -21,10 +21,14 @@ autocmd filetype supercollider,scnvim,scdoc,supercollider.help lua require'super
 `:SCNewPlugin`
 Create a plugin project using [this cookiecutter template](https://github.com/supercollider/cookiecutter-supercollider-plugin)
 
+This will open up a terminal with a questionnaire. Answering the questions will generate and populate a new plugin project.
+
 Requires [cookiecutter](https://cookiecutter.readthedocs.io/en/1.7.2/installation.html)
 
 `:SCNewQuark`
 Create a Quark project using [this cookiecutter template](https://github.com/madskjeldgaard/cookiecutter-quark)
+
+This will open up a terminal with a questionnaire. Answering the questions will generate and populate a new quark project.
 
 Requires [cookiecutter](https://cookiecutter.readthedocs.io/en/1.7.2/installation.html)
 
@@ -33,7 +37,7 @@ Use fuzzy finding (fzf / skim) to search for help
 
 Requires [scnvim](https://github.com/davidgranstrom/scnvim) and either [fzf.vim](https://github.com/junegunn/fzf.vim) or [skim.vim](https://github.com/lotabout/skim.vim)
 
-`:SCNvimFuzzyDefinitions`
+`:SCNvimFuzzyDef`
 Use fuzzy finding (fzf / skim) to search for definitions
 
 Requires [scnvim](https://github.com/davidgranstrom/scnvim) and either [fzf.vim](https://github.com/junegunn/fzf.vim) or [skim.vim](https://github.com/lotabout/skim.vim)

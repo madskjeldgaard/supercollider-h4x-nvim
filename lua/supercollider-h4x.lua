@@ -29,6 +29,7 @@ local isdir = utils.isdir
 local homedir = utils.home()
 
 local M = {}
+
 -- Init function
 -- Run this to register commands that interface with the functions here
 function M.setup()
@@ -52,21 +53,32 @@ end
 
 -- Uses https://github.com/elgiano/schelp-watch
 function M.get_schelp_watch()
-	local clone_to = utils.get_plugin_root_dir()
-	local url = "https://github.com/elgiano/schelp-watch" 
-	local clone_cmd = string.format("git clone %s %s", url, clone_to)
-	local post_clone = "echo schelp-watch >> .gitignore"
-	terminal(clone_cmd .. "&& " .. post_clone)
+	local clone_to = utils.get_plugin_root_dir() .. "/schelp-watch"
+
+	if exists(clone_to) then
+		error("sc-help folder already exists in supercollider-h4x folder")
+	else
+		local url = "https://github.com/elgiano/schelp-watch" 
+		local clone_cmd = string.format("git clone %s %s", url, clone_to)
+		local post_clone = "echo schelp-watch >> .gitignore"
+		terminal(clone_cmd .. "&& " .. post_clone)
+	end
 end
 
 function M.schelp_watch(sc_lang_config_file)
+	local schelpwatch = utils.get_plugin_root_dir() .. "/schelp-watch/schelp-watch"
+
+	if not exists(schelpwatch) then
+		M.get_schelp_watch()
+	end
+
 	local cmd
 	local helpsource_dir = "HelpSource"
 	if isdir(helpsource_dir) then
 		if sc_lang_config_file then
-			cmd = "schelp-watch/schelp-watch " .. helpsource_dir .. " --config " .. sc_lang_config_file .. " -o"
+			cmd = schelpwatch .. helpsource_dir .. " --config " .. sc_lang_config_file .. " -o"
 		else
-			cmd = "schelp-watch/schelp-watch " .. helpsource_dir .. " -o"
+			cmd = schelpwatch .. .. helpsource_dir .. " -o"
 		end
 
 		terminal(cmd)
