@@ -78,7 +78,7 @@ function M.schelp_watch(sc_lang_config_file)
 		if sc_lang_config_file then
 			cmd = schelpwatch .. helpsource_dir .. " --config " .. sc_lang_config_file .. " -o"
 		else
-			cmd = schelpwatch .. .. helpsource_dir .. " -o"
+			cmd = schelpwatch .. " " .. helpsource_dir .. " -o"
 		end
 
 		terminal(cmd)
