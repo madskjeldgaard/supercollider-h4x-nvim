@@ -97,6 +97,7 @@ Download source code for supercollider (for developing)
 
 # Options
 
+Options may be defined in either vimscript or lua. Here is how to do it in Lua:
 ```lua
 -- Option: choose fuzzy command ("fzf" or "skim") to use
 vim.g.scnvim_fuzzy_command = "skim"
@@ -108,5 +109,5 @@ vim.g.sc_source_code = "$HOME/supercollider"
 vim.g.sc_quark_path = "$HOME/.local/share/SuperCollider/Extensions"
 
 -- Option: Where to put a newly generated plugin
-vim.g.sc_plugin_dir = vim.g.sc_quark_path or "$HOME/.local/share/SuperCollider/Extensions"
+vim.g.sc_plugin_dir = "$HOME/.local/share/SuperCollider/Extensions"
 ```
