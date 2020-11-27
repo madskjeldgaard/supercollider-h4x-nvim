@@ -18,6 +18,17 @@ Run `:checkhealth` to see if you fullfill the depencies.
 - [schelp-watch](https://github.com/elgiano/schelp-watch) 
 - [cookiecutter](https://cookiecutter.readthedocs.io/en/1.7.2/installation.html)
 
+## Install
+To install using vim-plug
+1. Add this to your init.vim / .vimrc:
+`Plug 'madskjeldgaard/supercollider-h4x-nvim'`
+2. Open Vim and run the command `:PlugInstall`
+
+## See also
+
+- [scnvim](https://github.com/davidgranstrom/scnvim) / [scvim](https://github.com/supercollider/scvim)
+- [vim-scdoc-snippts](https://github.com/madskjeldgaard/vim-scdoc-snippets)
+
 # Usage
 
 To use these functions you need to call the setup function. This can be done in a number of ways, but perhaps the simplest is to add this to your `init.vim`:
