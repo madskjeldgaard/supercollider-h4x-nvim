@@ -18,7 +18,9 @@ autocmd filetype supercollider,scnvim,scdoc,supercollider.help lua require'super
 ```
 
 # Available commands
+
 `:SCNewPlugin`
+
 Create a plugin project using [this cookiecutter template](https://github.com/supercollider/cookiecutter-supercollider-plugin)
 
 This will open up a terminal with a questionnaire. Answering the questions will generate and populate a new plugin project.
@@ -26,6 +28,7 @@ This will open up a terminal with a questionnaire. Answering the questions will 
 Requires [cookiecutter](https://cookiecutter.readthedocs.io/en/1.7.2/installation.html)
 
 `:SCNewQuark`
+
 Create a Quark project using [this cookiecutter template](https://github.com/madskjeldgaard/cookiecutter-quark)
 
 This will open up a terminal with a questionnaire. Answering the questions will generate and populate a new quark project.
@@ -33,27 +36,33 @@ This will open up a terminal with a questionnaire. Answering the questions will 
 Requires [cookiecutter](https://cookiecutter.readthedocs.io/en/1.7.2/installation.html)
 
 `:SCNVIMFuzzyHelp`
+
 Use fuzzy finding (fzf / skim) to search for help
 
 Requires [scnvim](https://github.com/davidgranstrom/scnvim) and either [fzf.vim](https://github.com/junegunn/fzf.vim) or [skim.vim](https://github.com/lotabout/skim.vim)
 
 `:SCNvimFuzzyDef`
+
 Use fuzzy finding (fzf / skim) to search for definitions
 
 Requires [scnvim](https://github.com/davidgranstrom/scnvim) and either [fzf.vim](https://github.com/junegunn/fzf.vim) or [skim.vim](https://github.com/lotabout/skim.vim)
 
 `:SCCompileThis`
+
 Compile cpp plugin
 
 `:SCHelpWatch`
+
 Run schelp-watch, a little helper tool that runs the help docs you are working on in a browser and recompiles it every time you make a change.
 
 See [schelp-watch](https://github.com/elgiano/schelp-watch) for dependencies.
 
-`:GetSCHelpWatch`
-Download schelp-watch to your project and add it to your .gitignore list so that it doesn't mess up your git stuffs.
+`:SCGetHelpWatch`
+
+Download schelp-watch to to this plugin's diretory. This happens automatically when you use `:SCHelpWatch`
 
 `:SCGetSource`
+
 Download source code for supercollider (for developing)
 
 # Options
