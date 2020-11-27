@@ -9,6 +9,15 @@ This plugin is meant to be a companion to [David Grantrom's scnvim plugin](https
 
 Nvim >= 0.5
 
+## Dependencies
+
+Run `:checkhealth` to see if you fullfill the depencies.
+
+- [fzf.vim](https://github.com/junegunn/fzf.vim) or [skim.vim](https://github.com/lotabout/skim.vim)
+- [scnvim](https://github.com/davidgranstrom/scnvim)
+- [schelp-watch](https://github.com/elgiano/schelp-watch) 
+- [cookiecutter](https://cookiecutter.readthedocs.io/en/1.7.2/installation.html)
+
 # Usage
 
 To use these functions you need to call the setup function. This can be done in a number of ways, but perhaps the simplest is to add this to your `init.vim`:
@@ -19,6 +28,8 @@ autocmd filetype supercollider,scnvim,scdoc,supercollider.help lua require'super
 
 # Available commands
 
+![new plugin](/assets/newplugin.gif)
+
 `:SCNewPlugin`
 
 Create a plugin project using [this cookiecutter template](https://github.com/supercollider/cookiecutter-supercollider-plugin)
@@ -26,6 +37,8 @@ Create a plugin project using [this cookiecutter template](https://github.com/su
 This will open up a terminal with a questionnaire. Answering the questions will generate and populate a new plugin project.
 
 Requires [cookiecutter](https://cookiecutter.readthedocs.io/en/1.7.2/installation.html)
+
+![new quark](/assets/newquark.gif)
 
 `:SCNewQuark`
 
@@ -35,21 +48,22 @@ This will open up a terminal with a questionnaire. Answering the questions will 
 
 Requires [cookiecutter](https://cookiecutter.readthedocs.io/en/1.7.2/installation.html)
 
+![fuzzy help](/assets/fuzzyhelp.gif)
+
 `:SCNVIMFuzzyHelp`
 
 Use fuzzy finding (fzf / skim) to search for help
 
 Requires [scnvim](https://github.com/davidgranstrom/scnvim) and either [fzf.vim](https://github.com/junegunn/fzf.vim) or [skim.vim](https://github.com/lotabout/skim.vim)
 
+![fuzzy def](/assets/fuzzydef.gif)
 `:SCNvimFuzzyDef`
 
 Use fuzzy finding (fzf / skim) to search for definitions
 
 Requires [scnvim](https://github.com/davidgranstrom/scnvim) and either [fzf.vim](https://github.com/junegunn/fzf.vim) or [skim.vim](https://github.com/lotabout/skim.vim)
 
-`:SCCompileThis`
-
-Compile cpp plugin
+![schelp-watch](/assets/schelp-watch.gif)
 
 `:SCHelpWatch`
 
@@ -60,6 +74,10 @@ See [schelp-watch](https://github.com/elgiano/schelp-watch) for dependencies.
 `:SCGetHelpWatch`
 
 Download schelp-watch to to this plugin's diretory. This happens automatically when you use `:SCHelpWatch`
+
+`:SCCompileThis`
+
+Compile cpp plugin
 
 `:SCGetSource`
 
