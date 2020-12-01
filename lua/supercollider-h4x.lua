@@ -49,6 +49,10 @@ function M.setup()
 	-- Option: Where to put a newly generated plugin
 	vim.g.sc_plugin_dir = vim.g.sc_quark_path or homedir .. "/.local/share/SuperCollider/Extensions"
 
+	-- Option: urls for cookiecutter recipes
+	vim.g.sc_plugin_recipe = vim.g.sc_plugin_recipe or "https://github.com/supercollider/cookiecutter-supercollider-plugin"
+	vim.g.sc_quark_recipe = vim.g.sc_quark_recipe or "https://github.com/madskjeldgaard/cookiecutter-quark"
+
 end
 
 -- Uses https://github.com/elgiano/schelp-watch
@@ -58,7 +62,7 @@ function M.get_schelp_watch()
 	if exists(clone_to) then
 		error("sc-help folder already exists in supercollider-h4x folder")
 	else
-		local url = "https://github.com/elgiano/schelp-watch" 
+		local url = "https://github.com/elgiano/schelp-watch"
 		local clone_cmd = string.format("git clone %s %s", url, clone_to)
 		local post_clone = "echo schelp-watch >> .gitignore"
 		terminal(clone_cmd .. "&& " .. post_clone)
@@ -123,7 +127,7 @@ end
 -- TODO: Open the files after generation
 function M.create_plugin()
 	local output_dir = vim.g.sc_plugin_dir
-	local url = "https://github.com/supercollider/cookiecutter-supercollider-plugin"
+	local url = vim.g.sc_plugin_recipe
 	cookiecutter(url, output_dir)
 end
 
@@ -131,7 +135,7 @@ end
 -- TODO: Open the files after generation
 function M.create_quark()
 	local output_dir = vim.g.sc_quark_path
-	local url = "https://github.com/madskjeldgaard/cookiecutter-quark"
+	local url = vim.g.sc_quark_recipe
 	cookiecutter(url, output_dir)
 end
 

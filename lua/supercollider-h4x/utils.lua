@@ -17,7 +17,7 @@ function M.tbl_len(T)
 end
 
 function M.terminal(cmd)
-	vim.cmd("term " .. cmd)
+		vim.cmd("term " .. cmd)
 end
 
 function M.shell(command)

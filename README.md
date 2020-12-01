@@ -110,4 +110,9 @@ vim.g.sc_quark_path = "$HOME/.local/share/SuperCollider/Extensions"
 
 -- Option: Where to put a newly generated plugin
 vim.g.sc_plugin_dir = "$HOME/.local/share/SuperCollider/Extensions"
+
+-- Option: Set custom urls for cookiecutter recipes (if you have a nice fork or something)
+vim.g.sc_plugin_recipe = "https://github.com/supercollider/cookiecutter-supercollider-plugin"
+vim.g.sc_quark_recipe = "https://github.com/madskjeldgaard/cookiecutter-quark"
+
 ```
