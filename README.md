@@ -105,6 +105,10 @@ Download source code for supercollider (for developing)
 
 Options may be defined in either vimscript or lua. Here is how to do it in Lua:
 ```lua
+
+-- Option: Change the prompt used for SCPrompt
+vim.g.sc_prompt = "sch4x> "
+
 -- Option: choose fuzzy command ("fzf" or "skim") to use
 vim.g.scnvim_fuzzy_command = "skim"
 
