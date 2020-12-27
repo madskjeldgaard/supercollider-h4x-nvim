@@ -39,6 +39,12 @@ autocmd filetype supercollider,scnvim,scdoc,supercollider.help lua require'super
 
 # Available commands
 
+![prompt](/assets/prompt.gif)
+
+`:SCPrompt`
+
+Quickly run some SuperCollider code in a (fake) prompt and send it to scnvim's sclang instance/postwindow.
+
 ![new plugin](/assets/newplugin.gif)
 
 `:SCNewPlugin`

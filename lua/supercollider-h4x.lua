@@ -173,4 +173,19 @@ function M.sc_compile_plugin()
 
 end
 
+------------------------------------------------------------------------
+--                               Prompt                               --
+------------------------------------------------------------------------
+
+vim.g.sc_prompt = vim.g.sc_prompt or "sch4x> "
+
+function M.sc_prompt()
+	-- local position_before = vim.fn['getline'](".")
+	local prompt = vim.g.sc_prompt
+	local sc_code = vim.fn['input'](prompt)
+	utils.scnvim_send(sc_code)
+
+	vim.fn['inputrestore']()
+end
+
 return M

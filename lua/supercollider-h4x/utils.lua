@@ -4,6 +4,10 @@
 --
 local M = {}
 
+function M.scnvim_send(cmd)
+	require("scnvim").send(cmd)
+end
+
 -- ----------------------
 -- Lua utilities
 -- ----------------------

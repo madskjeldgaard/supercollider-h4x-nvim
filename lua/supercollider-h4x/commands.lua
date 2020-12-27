@@ -37,3 +37,8 @@ vim.cmd("command! SCGetHelpWatch lua require('supercollider-h4x').get_schelp_wat
 -- :SCHelpWatch
 -- Run schelp-watch
 vim.cmd("command! SCHelpWatch lua require('supercollider-h4x').schelp_watch()")
+
+-- COMMAND
+-- :SCPrompt
+-- Quickly execute some SuperCollider code
+vim.cmd("command! SCPrompt lua require('supercollider-h4x').sc_prompt()")
