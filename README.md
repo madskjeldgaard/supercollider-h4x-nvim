@@ -101,9 +101,17 @@ Compile cpp plugin
 
 Download source code for supercollider (for developing)
 
-`:SCLoad <file>` - Load <file> in SuperCollider
-`:SCLoadRel <file>` - Relatively load <file> in SuperCollider
-`:SCLoadMain` - Load "main.scd" from root of current dir
+`:SCLoad <file>` 
+
+Load <file> in SuperCollider
+
+`:SCLoadRel <file>` 
+
+Relatively load <file> in SuperCollider
+
+`:SCLoadMain` 
+
+Load "main.scd" from root of current dir
 
 # Options
 
