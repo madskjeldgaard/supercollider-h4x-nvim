@@ -109,7 +109,6 @@ end
 
 -- Reappropriate scnvim's open help function in lua
 M.open_help = vim.fn["scnvim#help#open_help_for"]
-
 function M.scnvim_fuzzy_help()
 	local help = scnvim_unpack_tags_table()
 	local help_keys = {};
@@ -183,7 +182,7 @@ function M.sc_prompt()
 	-- local position_before = vim.fn['getline'](".")
 	local prompt = vim.g.sc_prompt
 	local sc_code = vim.fn['input'](prompt)
-	utils.scnvim_send(sc_code)
+	require("scnvim").send(sc_code)
 
 	vim.fn['inputrestore']()
 end

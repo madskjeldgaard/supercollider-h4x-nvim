@@ -8,6 +8,26 @@ function M.scnvim_send(cmd)
 	require("scnvim").send(cmd)
 end
 
+
+--------------------
+--  small things  --
+--------------------
+
+-- Load superCollider files
+function M.load_file(file)
+	local sccode = string.format("\"%s\".load", file)
+	M.scnvim_send(sccode)
+end
+
+function M.load_file_relative(file)
+	local sccode = string.format("\"%s\".loadRelative", file)
+	M.scnvim_send(sccode)
+end
+
+function M.load_main()
+	M.load_file_relative("main.scd")
+end
+
 -- ----------------------
 -- Lua utilities
 -- ----------------------
@@ -157,6 +177,140 @@ function M.scnvim_unpack_tags_table()
 	end
 
 	return help
+end
+
+function M.scnvim_help_keys()
+	local help = M.scnvim_unpack_tags_table()
+	local help_keys = {};
+
+	for k,_ in pairs(help) do
+		table.insert(help_keys, tostring(k))
+	end
+
+	return help_keys
+end
+
+M.open_help = vim.fn["scnvim#help#open_help_for"]
+
+function M.scnvim_help_win_id()
+	local id = vim.g.scnvim_user_settings.help_window.id
+	return id
+end
+
+function M.scnvim_set_help_win_id(id)
+	-- vim.g.scnvim_user_settings.help_window.id = id
+	vim.cmd("let g:scnvim_user_settings.help_window.id=" .. id)
+end
+
+function M.scnvim_prep_help(subject)
+	M.scnvim_send("SCNvim.prepareHelpFor(" .. subject .. ")")
+end
+
+
+------------------------------------------------------------------------
+--                            Popfix popup                            --
+------------------------------------------------------------------------
+function M.popfix_help()
+	local helpwinid = M.scnvim_help_win_id()
+	local listdata = M.scnvim_help_keys()
+	local border_chars = {
+		TOP_LEFT = '┌',
+		TOP_RIGHT = '┐',
+		MID_HORIZONTAL = '─',
+		MID_VERTICAL = '│',
+		BOTTOM_LEFT = '└',
+		BOTTOM_RIGHT = '┘',
+	}
+
+	local function select_callback(index, line)
+		-- M.open_help(line)
+		local thiswin = vim.fn["win_getid"]()
+
+		-- print(index)
+		-- print(line)
+		-- M.scnvim_set_help_win_id(vim.fn["win_getid"]())
+		-- M.scnvim_set_help_win_id(0)
+		-- M.scnvim_prep_help(line)
+		-- local renderprog = vim.g.scnvim_user_settings.paths.scdoc_render_prg
+		-- local renderargs = vim.fn["scnvim#util#get_scdoc_render_args"]()
+
+		-- vim.cmd("! " .. renderprog .. "")
+		-- local path = "/home/mads/.local/share/SuperCollider/Help/Classes/" .. line .. ".html.scnvim"
+
+		-- M.open_help(line)
+
+		return  {
+		-- bufnr = thiswin,
+			bufnr = M.scnvim_help_win_id(),
+			-- line = 4 -- Line to be highlighted [optional]
+		}
+	-- function job here
+	end
+
+	local function close_callback(index, line)
+		M.open_help(line)
+	end
+
+	local opts = {
+		height = 33,
+		width = 50,
+		mode = 'editor',
+		data = listdata,
+		close_on_bufleave = true,
+		keymaps = {
+			i = {
+				['<Cr>'] = function(popup)
+				popup:close(close_callback)
+				end,
+				['<C-n>'] = function(popup)
+					popup:select_next()
+				end,
+				['<C-p>'] = function(popup)
+					popup:select_prev()
+				end
+			},
+			n = {
+				['<Cr>'] = function(popup)
+				popup:close(close_callback)
+				end,
+				['q'] = ':q!'
+			},
+		},
+		callbacks = {
+		select = select_callback, -- automatically calls it when selection changes
+		close = close_callback, -- automatically calls it when window closes.
+	},
+	list = {
+		border = true,
+		numbering = true,
+		title = 'Class',
+		border_chars = border_chars,
+		highlight = 'Normal',
+		selection_highlight = 'Visual',
+		matching_highlight = 'Identifier',
+	},
+	preview = {
+		type = 'buffer',
+		border = true,
+		numbering = true,
+		title = 'SuperCollider Help',
+		border_chars = border_chars,
+		highlight = 'Normal',
+		preview_highlight = 'Visual',
+	},
+	prompt = {
+		border = true,
+		numbering = true,
+		title = 'schelp> ',
+		border_chars = border_chars,
+		highlight = 'Normal',
+		prompt_highlight = 'Normal'
+	},
+	-- sorter = require'popfix.sorter'.new_fzy_native_sorter(true),
+	-- fuzzyEngine = require'popfix.fuzzy_engine'.new_SingleExecutionEngine()
+	}
+
+	return require'popfix':new(opts)
 end
 
 return M

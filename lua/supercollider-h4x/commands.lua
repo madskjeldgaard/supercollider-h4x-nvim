@@ -42,3 +42,18 @@ vim.cmd("command! SCHelpWatch lua require('supercollider-h4x').schelp_watch()")
 -- :SCPrompt
 -- Quickly execute some SuperCollider code
 vim.cmd("command! SCPrompt lua require('supercollider-h4x').sc_prompt()")
+
+-- COMMAND
+-- :SCLoad
+-- Load a file using String.load
+vim.cmd("command! -nargs=1 SCLoad lua require('supercollider-h4x/utils').load_file(<f-args>)")
+
+-- COMMAND
+-- :SCLoadRel
+-- Load a file using String.loadRelative
+vim.cmd("command! -nargs=1 SCLoadRel lua require('supercollider-h4x/utils').load_file_relative(<f-args>)")
+
+-- COMMAND
+-- :SCLoadMain
+-- Load a "main.scd" file using String.loadRelative
+vim.cmd("command! SCLoadMain lua require('supercollider-h4x/utils').load_file_relative(\"main.scd\")")
