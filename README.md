@@ -114,15 +114,19 @@ Load "main.scd" from root of current dir
 ## Gui stuff
 
 `:SCServerGui`
+
 Open server gui
 
 `:SCServerMeter`
+
 Open server meter
 
 `:SCServerPlotTree`
+
 Open server plot tree
 
 `:SCServerScope`
+
 Open server scope
 
 # Options
