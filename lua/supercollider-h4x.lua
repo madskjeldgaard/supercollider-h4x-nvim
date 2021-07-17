@@ -185,6 +185,27 @@ function M.open_external_search_browser()
 	utils.scnvim_send(cmd)
 end
 
+-- Gui stuff
+function M.open_server_meter()
+	cmd = "s.doWhenBooted{ s.meter };"
+	utils.scnvim_send(cmd)
+end
+
+function M.open_server_gui()
+	cmd = "s.doWhenBooted{ s.makeGui };"
+	utils.scnvim_send(cmd)
+end
+
+function M.open_server_plottree()
+	cmd = "s.doWhenBooted{ s.plotTree };"
+	utils.scnvim_send(cmd)
+end
+
+function M.open_server_scope()
+	cmd = "s.doWhenBooted{ s.scope };"
+	utils.scnvim_send(cmd)
+end
+
 ------------------------------------------------------------------------
 --                               Prompt                               --
 ------------------------------------------------------------------------

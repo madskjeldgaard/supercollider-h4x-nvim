@@ -120,6 +120,19 @@ Load "main.scd" from root of current dir
 
 Quickly run some SuperCollider code in a (fake) prompt and send it to scnvim's sclang instance/postwindow.
 
+`:SCServerGui`
+Open server gui
+
+`:SCServerMeter`
+Open server meter
+
+`:SCServerPlotTree`
+Open server plot tree
+
+`:SCServerScope`
+Open server scope
+
+
 # Options
 
 Options may be defined in either vimscript or lua. Here is how to do it in Lua:

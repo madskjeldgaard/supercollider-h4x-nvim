@@ -68,3 +68,23 @@ vim.cmd("command! SCExternalHelpSearch lua require('supercollider-h4x').open_ext
 -- Open external help browser page for clased
 vim.cmd("command! -nargs=1 SCExternalHelpOpen lua require('supercollider-h4x').open_external_help_for(\"<args>\")")
 
+-- COMMAND
+-- :SCServerGui
+-- Open server gui
+vim.cmd("command! SCServerGui lua require('supercollider-h4x').open_server_gui()")
+
+-- COMMAND
+-- :SCServerMeter
+-- Open server gui
+vim.cmd("command! SCServerMeter lua require('supercollider-h4x').open_server_meter()")
+
+-- COMMAND
+-- :SCServerPlotTree
+-- Open server gui
+vim.cmd("command! SCServerPlotTree lua require('supercollider-h4x').open_server_plottree()")
+
+-- COMMAND
+-- :SCServerScope
+-- Open server gui
+vim.cmd("command! SCServerScope lua require('supercollider-h4x').open_server_scope()")
+
