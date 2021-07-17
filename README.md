@@ -39,12 +39,6 @@ autocmd filetype supercollider,scnvim,scdoc,supercollider.help lua require'super
 
 # Available commands
 
-![prompt](/assets/prompt.gif)
-
-`:SCPrompt`
-
-Quickly run some SuperCollider code in a (fake) prompt and send it to scnvim's sclang instance/postwindow.
-
 ![new plugin](/assets/newplugin.gif)
 
 `:SCNewPlugin`
@@ -72,6 +66,13 @@ Requires [cookiecutter](https://cookiecutter.readthedocs.io/en/1.7.2/installatio
 Use fuzzy finding (fzf / skim) to search for help
 
 Requires [scnvim](https://github.com/davidgranstrom/scnvim) and either [fzf.vim](https://github.com/junegunn/fzf.vim) or [skim.vim](https://github.com/lotabout/skim.vim)
+
+`:SCExternalHelpOpen
+`
+Open external QT help browser page for class. Eg: `:SCExternalHelpOpen SinOsc`
+
+`:SCExternalHelpSearch`
+Open external QT help browser search page
 
 ![fuzzy def](/assets/fuzzydef.gif)
 
@@ -112,6 +113,12 @@ Relatively load <file> in SuperCollider
 `:SCLoadMain` 
 
 Load "main.scd" from root of current dir
+
+![prompt](/assets/prompt.gif)
+
+`:SCPrompt`
+
+Quickly run some SuperCollider code in a (fake) prompt and send it to scnvim's sclang instance/postwindow.
 
 # Options
 

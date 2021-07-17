@@ -65,6 +65,6 @@ vim.cmd("command! SCExternalHelpSearch lua require('supercollider-h4x').open_ext
 
 -- COMMAND
 -- :SCExternalHelpOpen
--- Open external help browser page for class
+-- Open external help browser page for clased
 vim.cmd("command! -nargs=1 SCExternalHelpOpen lua require('supercollider-h4x').open_external_help_for(\"<args>\")")
 
