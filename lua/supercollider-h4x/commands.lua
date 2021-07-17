@@ -57,3 +57,14 @@ vim.cmd("command! -nargs=1 SCLoadRel lua require('supercollider-h4x/utils').load
 -- :SCLoadMain
 -- Load a "main.scd" file using String.loadRelative
 vim.cmd("command! SCLoadMain lua require('supercollider-h4x/utils').load_file_relative(\"main.scd\")")
+
+-- COMMAND
+-- :SCExternalHelpSearch
+-- Open external help browser search page
+vim.cmd("command! SCExternalHelpSearch lua require('supercollider-h4x').open_external_search_browser()")
+
+-- COMMAND
+-- :SCExternalHelpOpen
+-- Open external help browser page for class
+vim.cmd("command! -nargs=1 SCExternalHelpOpen lua require('supercollider-h4x').open_external_help_for(\"<args>\")")
+

@@ -172,6 +172,19 @@ function M.sc_compile_plugin()
 
 end
 
+-- Open help browser (external QT)
+function M.open_external_help_for(help_file)
+	if help_file == nil then return end
+
+	cmd = "HelpBrowser.openHelpFor(\" " .. help_file .. " \")"
+	utils.scnvim_send(cmd)
+end
+
+function M.open_external_search_browser()
+	cmd = "HelpBrowser.openSearchPage()"
+	utils.scnvim_send(cmd)
+end
+
 ------------------------------------------------------------------------
 --                               Prompt                               --
 ------------------------------------------------------------------------
