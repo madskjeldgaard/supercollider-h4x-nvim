@@ -39,6 +39,8 @@ autocmd filetype supercollider,scnvim,scdoc,supercollider.help lua require'super
 
 # Available commands
 
+## Plugins / extensions
+
 ![new plugin](/assets/newplugin.gif)
 
 `:SCNewPlugin`
@@ -61,6 +63,20 @@ Requires [cookiecutter](https://cookiecutter.readthedocs.io/en/1.7.2/installatio
 
 ![fuzzy help](/assets/fuzzyhelp.gif)
 
+## Help file development
+![schelp-watch](/assets/schelp-watch.gif)
+
+`:SCHelpWatch`
+
+Run schelp-watch, a little helper tool that runs the help docs you are working on in a browser and recompiles it every time you make a change.
+
+See [schelp-watch](https://github.com/elgiano/schelp-watch) for dependencies.
+
+`:SCGetHelpWatch`
+
+Download schelp-watch to to this plugin's diretory. This happens automatically when you use `:SCHelpWatch`
+
+## Help file navigation / search
 `:SCNVIMFuzzyHelp`
 
 Use fuzzy finding (fzf / skim) to search for help
@@ -82,26 +98,7 @@ Use fuzzy finding (fzf / skim) to search for definitions
 
 Requires [scnvim](https://github.com/davidgranstrom/scnvim) and either [fzf.vim](https://github.com/junegunn/fzf.vim) or [skim.vim](https://github.com/lotabout/skim.vim)
 
-![schelp-watch](/assets/schelp-watch.gif)
-
-`:SCHelpWatch`
-
-Run schelp-watch, a little helper tool that runs the help docs you are working on in a browser and recompiles it every time you make a change.
-
-See [schelp-watch](https://github.com/elgiano/schelp-watch) for dependencies.
-
-`:SCGetHelpWatch`
-
-Download schelp-watch to to this plugin's diretory. This happens automatically when you use `:SCHelpWatch`
-
-`:SCCompileThis`
-
-Compile cpp plugin
-
-`:SCGetSource`
-
-Download source code for supercollider (for developing)
-
+## File loading
 `:SCLoad <file>` 
 
 Load <file> in SuperCollider
@@ -114,11 +111,7 @@ Relatively load <file> in SuperCollider
 
 Load "main.scd" from root of current dir
 
-![prompt](/assets/prompt.gif)
-
-`:SCPrompt`
-
-Quickly run some SuperCollider code in a (fake) prompt and send it to scnvim's sclang instance/postwindow.
+## Gui stuff
 
 `:SCServerGui`
 Open server gui
@@ -132,20 +125,13 @@ Open server plot tree
 `:SCServerScope`
 Open server scope
 
-
 # Options
 
 Options may be defined in either vimscript or lua. Here is how to do it in Lua:
 ```lua
 
--- Option: Change the prompt used for SCPrompt
-vim.g.sc_prompt = "sch4x> "
-
 -- Option: choose fuzzy command ("fzf" or "skim") to use
 vim.g.scnvim_fuzzy_command = "skim"
-
--- Option: path to supercollider development source code for compiling plugins
-vim.g.sc_source_code = "$HOME/supercollider"
 
 -- Option: Where to put a newly generated quark
 vim.g.sc_quark_path = "$HOME/.local/share/SuperCollider/Extensions"

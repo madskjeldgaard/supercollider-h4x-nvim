@@ -1,9 +1,4 @@
 -- COMMAND
--- :SCGetSource
--- Download source code for supercollider (for developing)
-vim.cmd("command! SCGetSource lua require('supercollider-h4x').get_sc_source()")
-
--- COMMAND
 -- :SCNewPlugin
 -- Create a plugin project using a cookiecutter template
 vim.cmd("command! SCNewPlugin lua require('supercollider-h4x').create_plugin()")
@@ -24,11 +19,6 @@ vim.cmd("command! SCNvimFuzzyHelp lua require('supercollider-h4x').scnvim_fuzzy_
 vim.cmd("command! SCNvimFuzzyDef lua require('supercollider-h4x').scnvim_fuzzy_definition()")
 
 -- COMMAND
--- :SCCompileThis
--- Compile cpp plugin
-vim.cmd("command! SCCompileThis lua require('supercollider-h4x').sc_compile_plugin()")
-
--- COMMAND
 -- :GetSCHelpWatch
 -- Download schelp-watch
 vim.cmd("command! SCGetHelpWatch lua require('supercollider-h4x').get_schelp_watch()")
@@ -37,11 +27,6 @@ vim.cmd("command! SCGetHelpWatch lua require('supercollider-h4x').get_schelp_wat
 -- :SCHelpWatch
 -- Run schelp-watch
 vim.cmd("command! SCHelpWatch lua require('supercollider-h4x').schelp_watch()")
-
--- COMMAND
--- :SCPrompt
--- Quickly execute some SuperCollider code
-vim.cmd("command! SCPrompt lua require('supercollider-h4x').sc_prompt()")
 
 -- COMMAND
 -- :SCLoad
