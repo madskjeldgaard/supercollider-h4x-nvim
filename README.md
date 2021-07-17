@@ -61,7 +61,6 @@ This will open up a terminal with a questionnaire. Answering the questions will 
 
 Requires [cookiecutter](https://cookiecutter.readthedocs.io/en/1.7.2/installation.html)
 
-![fuzzy help](/assets/fuzzyhelp.gif)
 
 ## Help file development
 ![schelp-watch](/assets/schelp-watch.gif)
@@ -77,6 +76,9 @@ See [schelp-watch](https://github.com/elgiano/schelp-watch) for dependencies.
 Download schelp-watch to to this plugin's diretory. This happens automatically when you use `:SCHelpWatch`
 
 ## Help file navigation / search
+
+![fuzzy help](/assets/fuzzyhelp.gif)
+
 `:SCNVIMFuzzyHelp`
 
 Use fuzzy finding (fzf / skim) to search for help
