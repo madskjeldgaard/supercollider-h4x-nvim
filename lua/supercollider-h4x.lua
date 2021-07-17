@@ -176,33 +176,33 @@ end
 function M.open_external_help_for(help_file)
 	if help_file == nil then return end
 
-	cmd = "HelpBrowser.openHelpFor(\" " .. help_file .. " \")"
+	local cmd = "HelpBrowser.openHelpFor(\" " .. help_file .. " \")"
 	utils.scnvim_send(cmd)
 end
 
 function M.open_external_search_browser()
-	cmd = "HelpBrowser.openSearchPage()"
+	local cmd = "HelpBrowser.openSearchPage()"
 	utils.scnvim_send(cmd)
 end
 
 -- Gui stuff
 function M.open_server_meter()
-	cmd = "s.doWhenBooted{ s.meter };"
+	local cmd = "s.doWhenBooted{ s.meter };"
 	utils.scnvim_send(cmd)
 end
 
 function M.open_server_gui()
-	cmd = "s.doWhenBooted{ s.makeGui };"
+	local cmd = "s.doWhenBooted{ s.makeGui };"
 	utils.scnvim_send(cmd)
 end
 
 function M.open_server_plottree()
-	cmd = "s.doWhenBooted{ s.plotTree };"
+	local cmd = "s.doWhenBooted{ s.plotTree };"
 	utils.scnvim_send(cmd)
 end
 
 function M.open_server_scope()
-	cmd = "s.doWhenBooted{ s.scope };"
+	local cmd = "s.doWhenBooted{ s.scope };"
 	utils.scnvim_send(cmd)
 end
 
