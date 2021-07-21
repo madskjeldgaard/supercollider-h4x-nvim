@@ -123,9 +123,6 @@ See [schelp-watch](https://github.com/elgiano/schelp-watch) for dependencies.
 
 `:SCGetHelpWatch`
 
-### SCHelpWatch
-
-Download schelp-watch to to this plugin's diretory. This happens automatically when you use `:SCHelpWatch`
 
 ## Help file navigation / search
 
