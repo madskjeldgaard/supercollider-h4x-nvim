@@ -10,11 +10,28 @@
 - [Usage](#usage)
 - [Available commands](#available-commands)
   - [Plugins / extensions](#plugins--extensions)
+    - [SCNewPlugin](#scnewplugin)
+    - [SCNewQuark](#scnewquark)
   - [Help file development](#help-file-development)
+    - [SCHelpWatch](#schelpwatch)
+    - [SCGetHelpWatch](#scgethelpwatch)
+    - [SCHelpWatch](#schelpwatch-1)
   - [Help file navigation / search](#help-file-navigation--search)
+    - [SCNVIMFuzzyHelp](#scnvimfuzzyhelp)
+    - [SCExternalHelpOpen SinOsc](#scexternalhelpopen-sinosc)
+    - [SCExternalHelpSearch](#scexternalhelpsearch)
+    - [SCNvimFuzzyDef](#scnvimfuzzydef)
   - [File loading](#file-loading)
+    - [SCLoad <file>](#scload-file)
+    - [SCLoadRel <file>](#scloadrel-file)
+    - [SCLoadMain](#scloadmain)
   - [Gui stuff](#gui-stuff)
+    - [SCServerGui](#scservergui)
+    - [SCServerMeter](#scservermeter)
+    - [SCServerPlotTree](#scserverplottree)
+    - [SCServerScope](#scserverscope)
   - [Code generation](#code-generation)
+    - [SCGeneratePattern](#scgeneratepattern)
 - [Options](#options)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
@@ -48,7 +65,8 @@ To install using vim-plug
 ## See also
 
 - [scnvim](https://github.com/davidgranstrom/scnvim) / [scvim](https://github.com/supercollider/scvim)
-- [vim-scdoc-snippts](https://github.com/madskjeldgaard/vim-scdoc-snippets)
+- [vim-scdoc-snippets](https://github.com/madskjeldgaard/vim-scdoc-snippets) (for UltiSnips)
+- [lua-supercollider-snippets](https://github.com/madskjeldgaard/lua-supercollider-snippets/) (for snippets.nvim)
 
 # Usage
 
@@ -62,6 +80,9 @@ autocmd filetype supercollider,scnvim,scdoc,supercollider.help lua require'super
 
 ## Plugins / extensions
 
+
+### SCNewPlugin
+
 ![new plugin](/assets/newplugin.gif)
 
 `:SCNewPlugin`
@@ -71,6 +92,9 @@ Create a plugin project using [this cookiecutter template](https://github.com/su
 This will open up a terminal with a questionnaire. Answering the questions will generate and populate a new plugin project.
 
 Requires [cookiecutter](https://cookiecutter.readthedocs.io/en/1.7.2/installation.html)
+
+
+### SCNewQuark
 
 ![new quark](/assets/newquark.gif)
 
@@ -84,6 +108,9 @@ Requires [cookiecutter](https://cookiecutter.readthedocs.io/en/1.7.2/installatio
 
 
 ## Help file development
+
+### SCHelpWatch
+
 ![schelp-watch](/assets/schelp-watch.gif)
 
 `:SCHelpWatch`
@@ -92,11 +119,18 @@ Run schelp-watch, a little helper tool that runs the help docs you are working o
 
 See [schelp-watch](https://github.com/elgiano/schelp-watch) for dependencies.
 
+### SCGetHelpWatch
+
 `:SCGetHelpWatch`
+
+### SCHelpWatch
 
 Download schelp-watch to to this plugin's diretory. This happens automatically when you use `:SCHelpWatch`
 
 ## Help file navigation / search
+
+
+### SCNVIMFuzzyHelp
 
 ![fuzzy help](/assets/fuzzyhelp.gif)
 
@@ -108,10 +142,17 @@ Requires [scnvim](https://github.com/davidgranstrom/scnvim) and either [fzf.vim]
 
 `:SCExternalHelpOpen
 `
+### SCExternalHelpOpen SinOsc
+
 Open external QT help browser page for class. Eg: `:SCExternalHelpOpen SinOsc`
+
+### SCExternalHelpSearch
 
 `:SCExternalHelpSearch`
 Open external QT help browser search page
+
+
+### SCNvimFuzzyDef
 
 ![fuzzy def](/assets/fuzzydef.gif)
 
@@ -122,13 +163,20 @@ Use fuzzy finding (fzf / skim) to search for definitions
 Requires [scnvim](https://github.com/davidgranstrom/scnvim) and either [fzf.vim](https://github.com/junegunn/fzf.vim) or [skim.vim](https://github.com/lotabout/skim.vim)
 
 ## File loading
+
+### SCLoad <file>
+
 `:SCLoad <file>` 
 
 Load <file> in SuperCollider
 
+### SCLoadRel <file>
+
 `:SCLoadRel <file>` 
 
 Relatively load <file> in SuperCollider
+
+### SCLoadMain
 
 `:SCLoadMain` 
 
@@ -136,23 +184,34 @@ Load "main.scd" from root of current dir
 
 ## Gui stuff
 
+### SCServerGui
+
 `:SCServerGui`
 
 Open server gui
+
+### SCServerMeter
 
 `:SCServerMeter`
 
 Open server meter
 
+### SCServerPlotTree
+
 `:SCServerPlotTree`
 
 Open server plot tree
+
+### SCServerScope
 
 `:SCServerScope`
 
 Open server scope
 
 ## Code generation
+
+### SCGeneratePattern 
+
 ![pattern inserter code generator in action](/assets/pattern-inserter.gif)
 
 `:SCGeneratePattern synthdef_name`
@@ -161,6 +220,7 @@ This will generate a Pbind with key/value pairs for all of a Synthdef's argument
 
 
 # Options
+
 
 Options may be defined in either vimscript or lua. Here is how to do it in Lua:
 ```lua
