@@ -131,6 +131,14 @@ Open server plot tree
 
 Open server scope
 
+## Code generation
+![pattern inserter code generator in action](/assets/pattern-inserter.gif)
+
+`:SCGeneratePattern <synthdef name>`
+
+This will generate a Pbind with key/value pairs for all of a Synthdef's arguments and insert it into a text document. 
+
+
 # Options
 
 Options may be defined in either vimscript or lua. Here is how to do it in Lua:

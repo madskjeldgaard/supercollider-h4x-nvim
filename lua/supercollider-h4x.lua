@@ -27,6 +27,8 @@ local terminal = utils.terminal
 local exists = utils.exists
 local isdir = utils.isdir
 local homedir = utils.home()
+local pattern_inserter = require'supercollider-h4x/pattern-inserter'
+
 
 local M = {}
 
