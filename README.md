@@ -140,9 +140,10 @@ Use fuzzy finding (fzf / skim) to search for help
 
 Requires [scnvim](https://github.com/davidgranstrom/scnvim) and either [fzf.vim](https://github.com/junegunn/fzf.vim) or [skim.vim](https://github.com/lotabout/skim.vim)
 
+### SCExternalHelpOpen 
+
 `:SCExternalHelpOpen
 `
-### SCExternalHelpOpen SinOsc
 
 Open external QT help browser page for class. Eg: `:SCExternalHelpOpen SinOsc`
 
