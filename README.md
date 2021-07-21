@@ -1,3 +1,24 @@
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+**Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
+
+- [supercollider-h4x-nvim](#supercollider-h4x-nvim)
+- [Requirements](#requirements)
+  - [Dependencies](#dependencies)
+  - [Install](#install)
+  - [See also](#see-also)
+- [Usage](#usage)
+- [Available commands](#available-commands)
+  - [Plugins / extensions](#plugins--extensions)
+  - [Help file development](#help-file-development)
+  - [Help file navigation / search](#help-file-navigation--search)
+  - [File loading](#file-loading)
+  - [Gui stuff](#gui-stuff)
+  - [Code generation](#code-generation)
+- [Options](#options)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
 # supercollider-h4x-nvim
 SuperCollider hacks for nvim written in lean Lua
 
@@ -134,7 +155,7 @@ Open server scope
 ## Code generation
 ![pattern inserter code generator in action](/assets/pattern-inserter.gif)
 
-`:SCGeneratePattern <synthdef name>`
+`:SCGeneratePattern synthdef_name`
 
 This will generate a Pbind with key/value pairs for all of a Synthdef's arguments and insert it into a text document. 
 
