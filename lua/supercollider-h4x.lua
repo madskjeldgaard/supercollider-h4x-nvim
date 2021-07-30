@@ -28,7 +28,7 @@ local exists = utils.exists
 local isdir = utils.isdir
 local homedir = utils.home()
 local pattern_inserter = require'supercollider-h4x/pattern-inserter'
-
+local ndef_paster = require'supercollider-h4x/nodeproxy-hacks'
 
 local M = {}
 

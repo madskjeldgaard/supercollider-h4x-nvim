@@ -215,6 +215,16 @@ Open server scope
 
 This will generate a Pbind with key/value pairs for all of a Synthdef's arguments and insert it into a text document. 
 
+### SCPasteNdef 
+
+![auto insert ndef's presets](/assets/ndefpaster.gif)
+
+`:SCPasteNdef ndef_name`
+
+This will take all current parameter values from an Ndef and paste them into the buffer to be later reused as a preset or whatever.
+
+
+
 
 # Options
 
