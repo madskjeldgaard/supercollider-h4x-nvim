@@ -8,7 +8,6 @@ function M.scnvim_send(cmd)
 	require("scnvim").send(cmd)
 end
 
-
 --------------------
 --  small things  --
 --------------------
@@ -150,17 +149,20 @@ end
 function M.fzf(sources, sinkfunc, custom_options)
 	local cmd = vim.g.scnvim_fuzzy_command
 	local fzf_run = vim.fn[cmd .. "#run"]
-	local fzf_wrap = vim.fn[cmd .. "#wrap"]
+	-- local fzf_wrap = vim.fn[cmd .. "#wrap"]
 
-	local wrapped = fzf_wrap("test", {
-		source = sources,
-		options = custom_options or {},
-		-- don't set `sink` or `sink*` here
-	})
+	-- local wrapped = fzf_wrap("test", {
+	-- 	source = sources,
+	-- 	options = custom_options or {},
+	-- 	-- don't set `sink` or `sink*` here
+	-- })
 
-	wrapped["sink*"] = nil   -- this line is required if you want to use `sink` only
-	wrapped.sink = sinkfunc
-	fzf_run(wrapped)
+	local specs = {["source"] = sources, ["sink"] = sinkfunc}
+
+	-- wrapped["sink*"] = nil   -- this line is required if you want to use `sink` only
+	-- wrapped.sink = sinkfunc
+	-- fzf_run(wrapped)
+	fzf_run(specs)
 end
 
 -- Unpack csv file with tags into lua table
@@ -205,7 +207,6 @@ end
 function M.scnvim_prep_help(subject)
 	M.scnvim_send("SCNvim.prepareHelpFor(" .. subject .. ")")
 end
-
 
 ------------------------------------------------------------------------
 --                            Popfix popup                            --
