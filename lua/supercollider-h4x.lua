@@ -178,7 +178,7 @@ end
 function M.open_external_help_for(help_file)
 	if help_file == nil then return end
 
-	local cmd = "HelpBrowser.openHelpFor(\" " .. help_file .. " \")"
+	local cmd = "HelpBrowser.openHelpFor(\"" .. help_file .. "\")"
 	utils.scnvim_send(cmd)
 end
 
@@ -207,6 +207,5 @@ function M.open_server_scope()
 	local cmd = "s.doWhenBooted{ s.scope };"
 	utils.scnvim_send(cmd)
 end
-
 
 return M
