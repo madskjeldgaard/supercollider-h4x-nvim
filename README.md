@@ -65,6 +65,7 @@ use { 'madskjeldgaard/supercollider-h4x-nvim',
 	config = function()
 			require'supercollider-h4x'.setup()
 	end,
+	after = {'scnvim'},
 	requires = {
 		'davidgranstrom/scnvim'
 	}
