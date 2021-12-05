@@ -24,7 +24,7 @@ function M.load_file_relative(file)
 end
 
 function M.load_main()
-	M.load_file_relative("main.scd")
+	M.load_file("main.scd")
 end
 
 -- ----------------------
@@ -147,15 +147,26 @@ end
 -- ----------------------
 
 function M.fzf(sources, sinkfunc, custom_options)
+<<<<<<< HEAD
 	local cmd = vim.g.scnvim_fuzzy_command
 	local fzf_run = vim.fn[cmd .. "#run"]
 	-- local fzf_wrap = vim.fn[cmd .. "#wrap"]
 
+=======
+
+	-- Deprecation warning
+	error("supercollider-h4x-nvim: All fuzzy searchers in this plugin are deprecated and will be removed. Use fzf-sc instead.")
+	-- local cmd = vim.g.scnvim_fuzzy_command
+	-- local fzf_run = vim.fn[cmd .. "#run"]
+	-- local fzf_wrap = vim.fn[cmd .. "#wrap"]
+	--
+>>>>>>> 7c16199 (feat!: Deprecate all fuzzy searchers)
 	-- local wrapped = fzf_wrap("test", {
 	-- 	source = sources,
 	-- 	options = custom_options or {},
 	-- 	-- don't set `sink` or `sink*` here
 	-- })
+<<<<<<< HEAD
 
 	local specs = {["source"] = sources, ["sink"] = sinkfunc}
 
@@ -163,6 +174,12 @@ function M.fzf(sources, sinkfunc, custom_options)
 	-- wrapped.sink = sinkfunc
 	-- fzf_run(wrapped)
 	fzf_run(specs)
+=======
+	--
+	-- wrapped["sink*"] = nil   -- this line is required if you want to use `sink` only
+	-- wrapped.sink = sinkfunc
+	-- fzf_run(wrapped)
+>>>>>>> 7c16199 (feat!: Deprecate all fuzzy searchers)
 end
 
 -- Unpack csv file with tags into lua table

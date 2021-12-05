@@ -50,7 +50,6 @@ Nvim >= 0.5
 
 Run `:checkhealth` to see if you fullfill the depencies.
 
-- [fzf.vim](https://github.com/junegunn/fzf.vim) or [skim.vim](https://github.com/lotabout/skim.vim)
 - [scnvim](https://github.com/davidgranstrom/scnvim)
 - [schelp-watch](https://github.com/elgiano/schelp-watch) 
 - [cookiecutter](https://cookiecutter.readthedocs.io/en/1.7.2/installation.html)
@@ -105,11 +104,14 @@ This will open up a terminal with a questionnaire. Answering the questions will 
 
 Requires [cookiecutter](https://cookiecutter.readthedocs.io/en/1.7.2/installation.html)
 
+<<<<<<< HEAD
 
 ## Help file development
 
 ### SCHelpWatch
 
+=======
+>>>>>>> 7c16199 (feat!: Deprecate all fuzzy searchers)
 ![schelp-watch](/assets/schelp-watch.gif)
 
 `:SCHelpWatch`
@@ -232,8 +234,16 @@ This will take all current parameter values from an Ndef and paste them into the
 Options may be defined in either vimscript or lua. Here is how to do it in Lua:
 ```lua
 
+<<<<<<< HEAD
 -- Option: choose fuzzy command ("fzf" or "skim") to use
 vim.g.scnvim_fuzzy_command = "skim"
+=======
+-- Option: Change the prompt used for SCPrompt
+vim.g.sc_prompt = "sch4x> "
+
+-- Option: path to supercollider development source code for compiling plugins
+vim.g.sc_source_code = "$HOME/supercollider"
+>>>>>>> 7c16199 (feat!: Deprecate all fuzzy searchers)
 
 -- Option: Where to put a newly generated quark
 vim.g.sc_quark_path = "$HOME/.local/share/SuperCollider/Extensions"
