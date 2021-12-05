@@ -17,7 +17,6 @@
     - [SCHelpWatch](#schelpwatch)
     - [SCGetHelpWatch](#scgethelpwatch)
   - [Help file navigation / search](#help-file-navigation--search)
-    - [SCNVIMFuzzyHelp](#scnvimfuzzyhelp)
     - [SCExternalHelpOpen](#scexternalhelpopen)
     - [SCExternalHelpSearch](#scexternalhelpsearch)
     - [SCNvimFuzzyDef](#scnvimfuzzydef)
@@ -124,7 +123,6 @@ Requires [cookiecutter](https://cookiecutter.readthedocs.io/en/1.7.2/installatio
 
 ### SCHelpWatch
 
-=======
 ![schelp-watch](/assets/schelp-watch.gif)
 
 `:SCHelpWatch`
@@ -139,17 +137,6 @@ See [schelp-watch](https://github.com/elgiano/schelp-watch) for dependencies.
 
 
 ## Help file navigation / search
-
-
-### SCNVIMFuzzyHelp
-
-![fuzzy help](/assets/fuzzyhelp.gif)
-
-`:SCNVIMFuzzyHelp`
-
-Use fuzzy finding (fzf / skim) to search for help
-
-Requires [scnvim](https://github.com/davidgranstrom/scnvim) and either [fzf.vim](https://github.com/junegunn/fzf.vim) or [skim.vim](https://github.com/lotabout/skim.vim)
 
 ### SCExternalHelpOpen 
 
