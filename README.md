@@ -55,6 +55,21 @@ Run `:checkhealth` to see if you fullfill the depencies.
 - [cookiecutter](https://cookiecutter.readthedocs.io/en/1.7.2/installation.html)
 
 ## Install
+
+### packer
+
+```lua
+use { 'madskjeldgaard/supercollider-h4x-nvim',
+	config = function()
+			require'supercollider-h4x'.setup()
+	end,
+	requires = {
+		'davidgranstrom/scnvim'
+	}
+}
+```
+
+### vim-plug
 To install using vim-plug
 1. Add this to your init.vim / .vimrc:
 `Plug 'madskjeldgaard/supercollider-h4x-nvim'`
@@ -63,6 +78,7 @@ To install using vim-plug
 ## See also
 
 - [scnvim](https://github.com/davidgranstrom/scnvim) / [scvim](https://github.com/supercollider/scvim)
+- [fzf-sc](https://github.com/madskjeldgaard/fzf-sc) - Fuzzy searcher
 - [vim-scdoc-snippets](https://github.com/madskjeldgaard/vim-scdoc-snippets) (for UltiSnips)
 - [lua-supercollider-snippets](https://github.com/madskjeldgaard/lua-supercollider-snippets/) (for snippets.nvim)
 
@@ -104,14 +120,11 @@ This will open up a terminal with a questionnaire. Answering the questions will 
 
 Requires [cookiecutter](https://cookiecutter.readthedocs.io/en/1.7.2/installation.html)
 
-<<<<<<< HEAD
-
 ## Help file development
 
 ### SCHelpWatch
 
 =======
->>>>>>> 7c16199 (feat!: Deprecate all fuzzy searchers)
 ![schelp-watch](/assets/schelp-watch.gif)
 
 `:SCHelpWatch`
@@ -234,16 +247,14 @@ This will take all current parameter values from an Ndef and paste them into the
 Options may be defined in either vimscript or lua. Here is how to do it in Lua:
 ```lua
 
-<<<<<<< HEAD
 -- Option: choose fuzzy command ("fzf" or "skim") to use
 vim.g.scnvim_fuzzy_command = "skim"
-=======
+
 -- Option: Change the prompt used for SCPrompt
 vim.g.sc_prompt = "sch4x> "
 
 -- Option: path to supercollider development source code for compiling plugins
 vim.g.sc_source_code = "$HOME/supercollider"
->>>>>>> 7c16199 (feat!: Deprecate all fuzzy searchers)
 
 -- Option: Where to put a newly generated quark
 vim.g.sc_quark_path = "$HOME/.local/share/SuperCollider/Extensions"
