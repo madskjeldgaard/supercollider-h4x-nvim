@@ -6,8 +6,9 @@
 - [Requirements](#requirements)
   - [Dependencies](#dependencies)
   - [Install](#install)
+    - [packer](#packer)
+    - [vim-plug](#vim-plug)
   - [See also](#see-also)
-- [Usage](#usage)
 - [Available commands](#available-commands)
   - [Plugins / extensions](#plugins--extensions)
     - [SCNewPlugin](#scnewplugin)
@@ -31,6 +32,7 @@
     - [SCServerScope](#scserverscope)
   - [Code generation](#code-generation)
     - [SCGeneratePattern](#scgeneratepattern)
+    - [SCPasteNdef](#scpastendef)
 - [Options](#options)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
@@ -75,20 +77,17 @@ To install using vim-plug
 `Plug 'madskjeldgaard/supercollider-h4x-nvim'`
 2. Open Vim and run the command `:PlugInstall`
 
+And then somewhere in your `init.vim`:
+```vimscript
+autocmd filetype supercollider,scnvim,scdoc,supercollider.help lua require'supercollider-h4x'.setup()
+```
+
 ## See also
 
 - [scnvim](https://github.com/davidgranstrom/scnvim) / [scvim](https://github.com/supercollider/scvim)
 - [fzf-sc](https://github.com/madskjeldgaard/fzf-sc) - Fuzzy searcher
 - [vim-scdoc-snippets](https://github.com/madskjeldgaard/vim-scdoc-snippets) (for UltiSnips)
 - [lua-supercollider-snippets](https://github.com/madskjeldgaard/lua-supercollider-snippets/) (for snippets.nvim)
-
-# Usage
-
-To use these functions you need to call the setup function. This can be done in a number of ways, but perhaps the simplest is to add this to your `init.vim`:
-
-```vimscript
-autocmd filetype supercollider,scnvim,scdoc,supercollider.help lua require'supercollider-h4x'.setup()
-```
 
 # Available commands
 
@@ -246,7 +245,6 @@ This will take all current parameter values from an Ndef and paste them into the
 
 Options may be defined in either vimscript or lua. Here is how to do it in Lua:
 ```lua
-
 -- Option: Change the prompt used for SCPrompt
 vim.g.sc_prompt = "sch4x> "
 
