@@ -247,9 +247,6 @@ This will take all current parameter values from an Ndef and paste them into the
 Options may be defined in either vimscript or lua. Here is how to do it in Lua:
 ```lua
 
--- Option: choose fuzzy command ("fzf" or "skim") to use
-vim.g.scnvim_fuzzy_command = "skim"
-
 -- Option: Change the prompt used for SCPrompt
 vim.g.sc_prompt = "sch4x> "
 
