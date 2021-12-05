@@ -19,7 +19,6 @@
   - [Help file navigation / search](#help-file-navigation--search)
     - [SCExternalHelpOpen](#scexternalhelpopen)
     - [SCExternalHelpSearch](#scexternalhelpsearch)
-    - [SCNvimFuzzyDef](#scnvimfuzzydef)
   - [File loading](#file-loading)
     - [SCLoad <file>](#scload-file)
     - [SCLoadRel <file>](#scloadrel-file)
@@ -149,17 +148,6 @@ Open external QT help browser page for class. Eg: `:SCExternalHelpOpen SinOsc`
 
 `:SCExternalHelpSearch`
 Open external QT help browser search page
-
-
-### SCNvimFuzzyDef
-
-![fuzzy def](/assets/fuzzydef.gif)
-
-`:SCNvimFuzzyDef`
-
-Use fuzzy finding (fzf / skim) to search for definitions
-
-Requires [scnvim](https://github.com/davidgranstrom/scnvim) and either [fzf.vim](https://github.com/junegunn/fzf.vim) or [skim.vim](https://github.com/lotabout/skim.vim)
 
 ## File loading
 
