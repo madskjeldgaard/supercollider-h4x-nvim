@@ -1,4 +1,3 @@
-local eval = require'scnvim'.eval
 local utils = require('supercollider-h4x/utils')
 
 local M = {}
@@ -6,10 +5,9 @@ local M = {}
 function M.paste_ndef_preset(ndef_name)
 	if ndef_name == nil then return end
 
-
 	local sc_code = "Ndef(" .. ndef_name .. ").controlNames().collect{|control| [\\\"'\\\" ++ control.name ++ \\\"'\\\" , control.defaultValue]}.flatten";
 
-	eval(
+	require'scnvim'.eval(
 		sc_code,
 		function (returnVal)
 			returnVal = "Ndef(" .. ndef_name .. ").set(*" .. returnVal .. ");"

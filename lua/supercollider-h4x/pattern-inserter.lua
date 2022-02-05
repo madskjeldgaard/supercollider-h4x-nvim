@@ -1,4 +1,3 @@
-local eval = require'scnvim'.eval
 local utils = require('supercollider-h4x/utils')
 
 local M = {}
@@ -10,7 +9,7 @@ function M.generate_pattern(synth_def_name)
 
 	local sc_code = "load(\\\"" .. utils.get_plugin_root_dir() .. "/supercollider/pattern_generator.scd\\\").value(" .. synth_def_name .. ");"
 
-	eval(
+	require'scnvim'.eval(
 		sc_code,
 		function (returnVal)
 			vim.api.nvim_paste(returnVal, nil, -1)
