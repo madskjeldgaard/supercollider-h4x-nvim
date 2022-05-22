@@ -95,33 +95,12 @@ function M.schelp_watch(sc_lang_config_file)
 end
 
 function M.scnvim_fuzzy_definition()
-	local help = scnvim_unpack_tags_table()
-	local help_keys = {};
-
-	for k,_ in pairs(help) do
-		table.insert(help_keys, k)
-	end
-
-	fzf(help_keys, function(class_name)
-		local key = tostring(class_name)
-		local lookup_path = help[key]
-		vim.cmd("spl " .. lookup_path)
-	end)
+	print("DEPRECATED: Please use FzfSC instead.")
 end
 
 -- Reappropriate scnvim's open help function in lua
-M.open_help = vim.fn["scnvim#help#open_help_for"]
 function M.scnvim_fuzzy_help()
-	local help = scnvim_unpack_tags_table()
-	local help_keys = {};
-
-	for k,_ in pairs(help) do
-		table.insert(help_keys, tostring(k))
-	end
-
-	fzf(help_keys, function(class_name)
-		M.open_help(tostring(class_name))
-	end)
+	print("DEPRECATED: Please use FzfSC instead.")
 end
 
 -- Create a SuperCollider plugin with cpp
